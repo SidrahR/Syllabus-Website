@@ -25,7 +25,7 @@ import {
   ChevronRightIcon,
 } from "@chakra-ui/icons";
 
-export default function WithSubnavigation() {
+export default function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -57,12 +57,14 @@ export default function WithSubnavigation() {
           />
         </Flex>
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Image
-            src="/piaicLogo.svg"
-            alt="piaic logo"
-            boxSize="70px"
-            my="5px"
-          />
+          <Link href="/">
+            <Image
+              src="/piaicLogo.svg"
+              alt="piaic logo"
+              boxSize="70px"
+              my="5px"
+            />
+          </Link>
 
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
@@ -77,7 +79,7 @@ export default function WithSubnavigation() {
         >
           <Button
             as={"a"}
-            fontSize={"2xl"}
+            fontSize={"xl"}
             fontWeight={400}
             variant={"link"}
             href={"#"}
@@ -87,11 +89,10 @@ export default function WithSubnavigation() {
           </Button>
           <Button
             display={{ base: "none", md: "inline-flex" }}
-            fontSize={"2xl"}
+            fontSize={"xl"}
             fontWeight={600}
             color={"white"}
             bg={"cyan.600"}
-            href={"#"}
             _hover={{
               bg: "cyan.500",
             }}
@@ -122,7 +123,7 @@ const DesktopNav = () => {
               <Link
                 p={3}
                 href={navItem.href ?? "#"}
-                fontSize={"2xl"}
+                fontSize={"xl"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -270,19 +271,11 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
+    label: "Home",
+    href: "/",
+  },
+  {
     label: "Faculty",
-    href: "#",
-  },
-  {
-    label: "Admissions",
-    href: "#",
-  },
-  {
-    label: "Careers",
-    href: "#",
-  },
-  {
-    label: "Courses",
-    href: "#",
+    href: "/faculty",
   },
 ];

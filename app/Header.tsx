@@ -12,7 +12,7 @@ import {
   Box,
 } from "@chakra-ui/react";
 
-export default function CallToActionWithIllustration() {
+export default function Header() {
   return (
     <Box
       backgroundImage="url('/header_bg.jpg')"
@@ -43,28 +43,11 @@ export default function CallToActionWithIllustration() {
             Generation of the Internet Consolidating Web 3.0, Metaverse,
             Artificial Intelligence (AI), Cloud, Edge, Ambient Computing/IoT,
             Network Automation, and Bioinformatics Technologies. Visit our
-            website <Link color="blue.500">https://www.piaic.org</Link>
+            website{" "}
+            <Link color="blue.500" href="https://www.piaic.org" target="_blank">
+              https://www.piaic.org
+            </Link>
           </Text>
-          <Stack spacing={6} direction={"row"}>
-            <Button
-              rounded={"full"}
-              px={6}
-              colorScheme={"orange"}
-              bg={"orange.400"}
-              _hover={{ bg: "orange.500" }}
-            >
-              Get started
-            </Button>
-            <Button rounded={"full"} px={6}>
-              Learn more
-            </Button>
-          </Stack>
-          <Flex w={"full"}>
-            <Illustration
-              height={{ sm: "24rem", lg: "28rem" }}
-              mt={{ base: 12, sm: 16 }}
-            />
-          </Flex>
         </Stack>
       </Container>
     </Box>

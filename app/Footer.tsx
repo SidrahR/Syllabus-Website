@@ -9,6 +9,7 @@ import {
   useColorModeValue,
   VisuallyHidden,
   Image,
+  Flex,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { ReactNode } from "react";
@@ -45,7 +46,7 @@ const SocialButton = ({
   );
 };
 
-export default function SmallCentered() {
+export default function Footer() {
   return (
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}

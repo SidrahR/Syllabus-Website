@@ -1,15 +1,16 @@
 "use client";
 
-import WithSubnavigation from "./Navbar";
-import CallToActionWithIllustration from "./Header";
-import SmallCentered from "./Footer";
-
+import Navbar from "./Navbar";
+import Header from "./Header";
+import Footer from "./Footer";
+import Cards from "./Cards";
 export default function Home() {
   return (
     <>
-      <WithSubnavigation />
-      <CallToActionWithIllustration />
-      <SmallCentered />
+      <Navbar />
+      <Header />
+      <Cards />
+      <Footer />
     </>
   );
 }
