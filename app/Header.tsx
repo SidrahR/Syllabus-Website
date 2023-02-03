@@ -33,17 +33,16 @@ export default function Header() {
             color={"blue.700"}
           >
             <Text as={"span"} color={"blue.500"} fontWeight="bold">
-              PIAIC Syllabus <br />
+              Panaverse DAO Syllabus <br />
             </Text>
             Presidential Initiative for Artificial Intelligence and Computing{" "}
           </Heading>
           <Text color={"gray.700"} maxW={"3xl"}>
-            Certified Web 3.0 and Metaverse Developer A One and Quarter Years
-            Panaverse DAO Earn as you Learn Program Getting Ready for the Next
-            Generation of the Internet Consolidating Web 3.0, Metaverse,
-            Artificial Intelligence (AI), Cloud, Edge, Ambient Computing/IoT,
-            Network Automation, and Bioinformatics Technologies. Visit our
-            website{" "}
+            A One and Quarter Years Panaverse DAO Earn as you Learn Program
+            Getting Ready for the Next Generation of the Internet Consolidating
+            Web 3.0, Metaverse, Artificial Intelligence (AI), Cloud, Edge,
+            Ambient Computing/IoT, Network Automation, and Bioinformatics
+            Technologies. Visit our website{" "}
             <Link color="blue.500" href="https://www.piaic.org" target="_blank">
               https://www.piaic.org
             </Link>

@@ -1,4 +1,4 @@
-"use cient";
+"use client";
 
 import {
   Box,
@@ -10,13 +10,13 @@ import {
   Collapse,
   Icon,
   Link,
+  Image,
   Popover,
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
   useBreakpointValue,
   useDisclosure,
-  Image,
 } from "@chakra-ui/react";
 import {
   HamburgerIcon,
@@ -35,7 +35,7 @@ export default function Navbar() {
         color={useColorModeValue("gray.600", "white")}
         minH={"60px"}
         py={{ base: 2 }}
-        px={{ base: 40 }}
+        px={{ base: 4 }}
         borderBottom={1}
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
@@ -59,7 +59,7 @@ export default function Navbar() {
         <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
           <Link href="/">
             <Image
-              src="/piaicLogo.svg"
+              src="/piaicLogo.png"
               alt="piaic logo"
               boxSize="70px"
               my="5px"
@@ -121,7 +121,7 @@ const DesktopNav = () => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
-                p={3}
+                p={2}
                 href={navItem.href ?? "#"}
                 fontSize={"xl"}
                 fontWeight={500}

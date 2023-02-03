@@ -11,6 +11,8 @@ import {
   Flex,
   HStack,
   Link,
+  Show,
+  Hide,
 } from "@chakra-ui/react";
 
 export default function Cards() {
@@ -22,7 +24,13 @@ export default function Cards() {
       backgroundRepeat="repeat-y"
       backgroundSize="cover"
     >
-      <HStack spacing="20" my="10" alignItems="stretch">
+      <HStack
+        mt="10"
+        alignItems="stretch"
+        spacing={["0", "0", "20"]}
+        p={["5", "10", "auto"]}
+        flexDirection={["column", "column", "row"]}
+      >
         <Card maxW="sm">
           <CardBody>
             <Image
@@ -52,6 +60,16 @@ export default function Cards() {
             </Link>
           </CardFooter>
         </Card>
+
+        <Show below="sm">
+          <Divider height="6"></Divider>
+        </Show>
+        <Show below="md">
+          <Divider height="6"></Divider>
+        </Show>
+        <Hide above="lg">
+          <Divider></Divider>
+        </Hide>
 
         <Card maxW="sm">
           <CardBody>
@@ -83,6 +101,16 @@ export default function Cards() {
           </CardFooter>
         </Card>
 
+        <Show below="sm md">
+          <Divider height="6"></Divider>
+        </Show>
+        <Show below="md">
+          <Divider height="6"></Divider>
+        </Show>
+        <Hide above="lg">
+          <Divider></Divider>
+        </Hide>
+
         <Card maxW="sm">
           <CardBody>
             <Image
@@ -111,7 +139,14 @@ export default function Cards() {
         </Card>
       </HStack>
 
-      <HStack spacing="20" mb="10" alignItems="stretch">
+      <HStack
+        mb="10"
+        alignItems="stretch"
+        spacing={["0", "0", "20"]}
+        p={["5", "10", "auto"]}
+        pt={["0", "0", "auto"]}
+        flexDirection={["column", "column", "row"]}
+      >
         <Card maxW="sm">
           <CardBody>
             <Image
@@ -139,6 +174,16 @@ export default function Cards() {
             </Link>
           </CardFooter>
         </Card>
+
+        <Show below="sm">
+          <Divider height="6"></Divider>
+        </Show>
+        <Show below="md">
+          <Divider height="6"></Divider>
+        </Show>
+        <Hide above="md">
+          <Divider></Divider>
+        </Hide>
 
         <Card maxW="sm">
           <CardBody>
@@ -170,6 +215,16 @@ export default function Cards() {
             </Link>
           </CardFooter>
         </Card>
+
+        <Show below="sm">
+          <Divider height="6"></Divider>
+        </Show>
+        <Show below="md">
+          <Divider height="6"></Divider>
+        </Show>
+        <Hide above="md">
+          <Divider></Divider>
+        </Hide>
 
         <Card maxW="sm">
           <CardBody>

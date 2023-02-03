@@ -11,7 +11,7 @@ import {
 export default function CoreCourses() {
   return (
     <>
-      <Box pt="10px" width="45%" margin="auto">
+      <Box pt="10px" width={["80%", "80%", "45%"]} margin="auto">
         <Heading textAlign="center">
           Core Courses (Common in All Specializations)
         </Heading>

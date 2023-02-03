@@ -22,8 +22,11 @@ export default function page() {
   return (
     <>
       <Navbar />
-      <Flex flexDirection="column" alignItems="center">
-        <HStack spacing="20">
+      <Flex flexDirection="column" alignItems="center" py="10">
+        <HStack
+          flexDirection={["column", "column", "row"]}
+          spacing={["0", "0", "20"]}
+        >
           <Center py={6}>
             <Box
               maxW={"320px"}
@@ -175,7 +178,10 @@ export default function page() {
           </Center>
         </HStack>
 
-        <HStack spacing="20">
+        <HStack
+          flexDirection={["column", "column", "row"]}
+          spacing={["0", "0", "20"]}
+        >
           <Center py={6}>
             <Box
               maxW={"320px"}

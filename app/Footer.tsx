@@ -61,14 +61,9 @@ export default function Footer() {
         justify={"center"}
         align={"center"}
       >
+        <Image src="/piaicLogo.png" alt="piaic logo" boxSize="50px" my="5px" />
         <Stack direction={"row"} spacing={6} fontSize="lg">
-          <Image
-            src="/piaicLogo.svg"
-            alt="piaic logo"
-            boxSize="50px"
-            my="5px"
-          />
-          <Link pt="15px" href={"#"}>
+          <Link pt="15px" href={"/"}>
             Home
           </Link>
           <Link pt="15px" href={"#"}>

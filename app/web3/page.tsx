@@ -11,7 +11,7 @@ export default function page() {
       <Navbar />
       <CoreCourses />
 
-      <Box py="50px" width="45%" margin="auto">
+      <Box py="50px" width={["80%", "80%", "45%"]} margin="auto">
         <Heading textAlign="center">
           Web 3.0 and Metaverse - Specialized Tracks
         </Heading>
