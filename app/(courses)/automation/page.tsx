@@ -1,13 +1,13 @@
 "use client";
 
-import Navbar from "../Navbar";
-import Footer from "../Footer";
-import CoreCourses from "../CoreCourses";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import CoreCourses from "../../components/CoreCourses";
 import { Box, Heading, Text, UnorderedList, ListItem } from "@chakra-ui/react";
 
 export default function page() {
   return (
-    <>
+    <Box bgGradient="linear(teal.50, teal.100, teal.200, teal.300)">
       <Navbar />
       <CoreCourses />
 
@@ -38,6 +38,6 @@ export default function page() {
       </Box>
 
       <Footer />
-    </>
+    </Box>
   );
 }

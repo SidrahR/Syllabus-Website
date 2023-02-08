@@ -40,7 +40,8 @@ export default function Navbar() {
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
-        bgGradient="linear(to-r, green.300,gray.300)"
+        // bgGradient="linear(to-r, green.300,gray.300)"
+        background="transparent"
       >
         <Flex
           flex={{ base: 1, md: "auto" }}
@@ -61,7 +62,7 @@ export default function Navbar() {
             <Image
               src="/piaicLogo.png"
               alt="piaic logo"
-              boxSize="70px"
+              boxSize="50px"
               my="5px"
             />
           </Link>
@@ -79,7 +80,7 @@ export default function Navbar() {
         >
           <Button
             as={"a"}
-            fontSize={"xl"}
+            fontSize={"md"}
             fontWeight={400}
             variant={"link"}
             href={"#"}
@@ -89,15 +90,15 @@ export default function Navbar() {
           </Button>
           <Button
             display={{ base: "none", md: "inline-flex" }}
-            fontSize={"xl"}
-            fontWeight={600}
+            fontSize={"md"}
+            fontWeight={500}
             color={"white"}
-            bg={"cyan.600"}
+            bg={"red.600"}
             _hover={{
-              bg: "cyan.500",
+              bg: "red.800",
             }}
           >
-            Sign Up
+            Join
           </Button>
         </Stack>
       </Flex>
@@ -115,7 +116,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
-    <Stack direction={"row"} spacing={4} pt="25px">
+    <Stack direction={"row"} spacing={4} pt="15px">
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
@@ -123,8 +124,8 @@ const DesktopNav = () => {
               <Link
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"xl"}
-                fontWeight={500}
+                fontSize={"md"}
+                fontWeight={400}
                 color={linkColor}
                 _hover={{
                   textDecoration: "none",
@@ -143,55 +144,12 @@ const DesktopNav = () => {
                 p={4}
                 rounded={"xl"}
                 minW={"sm"}
-              >
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
+              ></PopoverContent>
             )}
           </Popover>
         </Box>
       ))}
     </Stack>
-  );
-};
-
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
-  return (
-    <Link
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-    >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
-            transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
-        </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
-        >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Link>
   );
 };
 

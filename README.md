@@ -41,3 +41,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 npm i react-icons
 npm i @types/react-icons
+npm i react-slick
+npm i -D @types/react-slick

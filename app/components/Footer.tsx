@@ -9,7 +9,6 @@ import {
   useColorModeValue,
   VisuallyHidden,
   Image,
-  Flex,
 } from "@chakra-ui/react";
 import { FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { ReactNode } from "react";
@@ -51,7 +50,8 @@ export default function Footer() {
     <Box
       bg={useColorModeValue("gray.50", "gray.900")}
       color={useColorModeValue("gray.800", "gray.200")}
-      bgGradient="linear(to-r, green.300,gray.300)"
+      // bgGradient="linear(to-r, green.300,gray.300)"
+      background="transparent"
     >
       <Container
         as={Stack}
@@ -61,18 +61,17 @@ export default function Footer() {
         justify={"center"}
         align={"center"}
       >
-        <Image src="/piaicLogo.png" alt="piaic logo" boxSize="50px" my="5px" />
-        <Stack direction={"row"} spacing={6} fontSize="lg">
+        <Stack direction={"row"} spacing={6} fontSize="md">
           <Link pt="15px" href={"/"}>
-            Home
+            <Image src="/piaicLogo.png" alt="piaic logo" boxSize="30px" />
           </Link>
-          <Link pt="15px" href={"#"}>
+          <Link pt="17px" href={"#"}>
             About
           </Link>
-          <Link pt="15px" href={"#"}>
+          <Link pt="17px" href={"#"}>
             Blog
           </Link>
-          <Link pt="15px" href={"#"}>
+          <Link pt="17px" href={"#"}>
             Contact
           </Link>
         </Stack>
@@ -92,7 +91,7 @@ export default function Footer() {
           justify={{ base: "center", md: "space-between" }}
           align={{ base: "center", md: "center" }}
         >
-          <Text>© 2022 PIAIC. All rights reserved</Text>
+          <Text>© 2023 PIAIC. All rights reserved</Text>
           <Stack direction={"row"} spacing={6}>
             <SocialButton label={"Twitter"} href={"#"}>
               <FaTwitter />

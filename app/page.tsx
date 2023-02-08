@@ -1,17 +1,18 @@
 "use client";
 
-import Navbar from "./Navbar";
-import Header from "./Header";
-import Footer from "./Footer";
-import Cards from "./Cards";
+import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Cards from "./components/Cards";
+import { Box } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <>
+    <Box bgGradient="linear(teal.50, teal.100, teal.200, teal.300)">
       <Navbar />
       <Header />
       <Cards />
       <Footer />
-    </>
+    </Box>
   );
 }

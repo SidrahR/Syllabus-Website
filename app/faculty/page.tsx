@@ -1,7 +1,7 @@
 "use client";
 
-import Navbar from "../Navbar";
-import Footer from "../Footer";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import {
   Heading,
   Avatar,
@@ -20,7 +20,7 @@ import {
 
 export default function page() {
   return (
-    <>
+    <Box bgGradient="linear(teal.50, teal.100, teal.200, teal.300)">
       <Navbar />
       <Flex flexDirection="column" alignItems="center" py="10">
         <HStack
@@ -332,6 +332,6 @@ export default function page() {
         </HStack>
       </Flex>
       <Footer />
-    </>
+    </Box>
   );
 }

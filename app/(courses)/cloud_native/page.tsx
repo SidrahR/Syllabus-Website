@@ -1,39 +1,37 @@
 "use client";
 
-import Navbar from "../Navbar";
-import Footer from "../Footer";
-import CoreCourses from "../CoreCourses";
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import CoreCourses from "../../components/CoreCourses";
 import { Box, Heading, Text, UnorderedList, ListItem } from "@chakra-ui/react";
 
 export default function page() {
   return (
-    <>
+    <Box bgGradient="linear(teal.50, teal.100, teal.200, teal.300)">
       <Navbar />
       <CoreCourses />
 
       <Box py="50px" width={["80%", "80%", "45%"]} margin="auto">
         <Heading textAlign="center">
-          Ambient Computing and IoT - Specialized Tracks
+          Cloud-Native Computing - Specialized Tracks
         </Heading>
         <Text textAlign="center" pb="20px" fontSize="lg" pt="10px">
-          The Ambient Computing and IoT Specialization focuses on building Smart
-          Homes, Offices, Factories, and Cities using Voice computing, Matter
-          Protocol, and Embedded Devices.
+          The Cloud-Native Computing Specialization focuses on Containers,
+          Kubernetes, and CDK for Kubernetes.
         </Text>
         <UnorderedList fontSize="lg" spacing="5">
           <ListItem>
             <Heading fontSize="xl">Quarter IV </Heading>
-            AC-351: Ambient Computing with Voice Assistants and Matter Protocol
-            Devices
+            CN-351: Certified Kubernetes Application Developer (CKAD)
           </ListItem>
           <ListItem>
             <Heading fontSize="xl">Quarter V </Heading>
-            AC-361: Embedded Programming using C and Rust
+            CN-361: Developing Multi-Cloud APIs using CDK for Terraform
           </ListItem>
         </UnorderedList>
       </Box>
 
       <Footer />
-    </>
+    </Box>
   );
 }
