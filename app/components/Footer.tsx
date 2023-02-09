@@ -68,7 +68,7 @@ export default function Footer() {
           <Link pt="17px" href={"/"}>
             Home
           </Link>
-          <Link pt="17px" href={"/faculty"}>
+          <Link pt="17px" href={"/faculty"} target="_blank">
             Faculty
           </Link>
           <Link pt="17px" href={"#"}>

@@ -39,7 +39,6 @@ export default function Navbar() {
         borderStyle={"solid"}
         borderColor={useColorModeValue("gray.200", "gray.900")}
         align={"center"}
-        // bgGradient="linear(to-r, green.300,gray.300)"
         background="transparent"
       >
         <Flex
