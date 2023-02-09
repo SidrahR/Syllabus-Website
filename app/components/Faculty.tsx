@@ -85,7 +85,7 @@ export default function Faculty() {
           <Center py={6}>
             <Box
               maxW={"280px"}
-              w="170px"
+              w={{ base: "300px", md: "300", lg: "170px" }}
               bg="gray.900"
               boxShadow={"2xl"}
               rounded={"lg"}
@@ -97,14 +97,17 @@ export default function Faculty() {
               style={{ animationDelay: "0.5s", opacity: 0 }}
             >
               <Avatar
-                size={"xl"}
+                size={{ base: "3xl", md: "3xl", lg: "xl" }}
                 src={
                   "https://scontent.fisb6-2.fna.fbcdn.net/v/t39.30808-6/263273711_10158351180047623_7045526683278197383_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGydZC0V3XDmOaR7b-Zt4226dXcOl3Y_4Dp1dw6Xdj_gNQzasCwq-RpiRW1x8y9Bek&_nc_ohc=sWnLX3hlNv4AX_djW-J&_nc_ht=scontent.fisb6-2.fna&oh=00_AfCxT5Uj-iGWmlw4QhIJtpk0ON-eYB2ogti4-Xc7Q9jjBA&oe=63E25B53"
                 }
                 mb={2}
                 pos={"relative"}
               />
-              <Heading fontSize={"md"} fontFamily={"body"}>
+              <Heading
+                fontSize={{ base: "xl", md: "xl", lg: "md" }}
+                fontFamily={"body"}
+              >
                 Zia Khan
               </Heading>
             </Box>
@@ -113,7 +116,7 @@ export default function Faculty() {
           <Center py={6}>
             <Box
               maxW={"280px"}
-              w="170px"
+              w={{ base: "300px", md: "300", lg: "170px" }}
               bg={"gray.900"}
               boxShadow={"2xl"}
               rounded={"lg"}
@@ -125,14 +128,17 @@ export default function Faculty() {
               style={{ animationDelay: "1s", opacity: 0 }}
             >
               <Avatar
-                size={"xl"}
+                size={{ base: "3xl", md: "3xl", lg: "xl" }}
                 src={
                   "https://media.licdn.com/dms/image/C4D03AQE1Hzv61ccMVw/profile-displayphoto-shrink_800_800/0/1556048207367?e=1680739200&v=beta&t=Wi1q3Iy2rTnTI11ytdrHq8h7KEDx4TrAonNHlm92eUQ"
                 }
                 mb={2}
                 pos={"relative"}
               />
-              <Heading fontSize={"md"} fontFamily={"body"}>
+              <Heading
+                fontSize={{ base: "xl", md: "xl", lg: "md" }}
+                fontFamily={"body"}
+              >
                 Daniyal Nagori
               </Heading>
             </Box>
@@ -146,7 +152,7 @@ export default function Faculty() {
           <Center py={6}>
             <Box
               maxW={"280px"}
-              w="170px"
+              w={{ base: "300px", md: "300", lg: "170px" }}
               bg="gray.900"
               boxShadow={"2xl"}
               rounded={"lg"}
@@ -158,14 +164,17 @@ export default function Faculty() {
               style={{ animationDelay: "1.5s", opacity: 0 }}
             >
               <Avatar
-                size={"xl"}
+                size={{ base: "3xl", md: "3xl", lg: "xl" }}
                 src={
                   "https://media.licdn.com/dms/image/C4D03AQFuhdYPmkC0sA/profile-displayphoto-shrink_800_800/0/1562700934047?e=1680739200&v=beta&t=tlU5jHuVIzQIWmOxCLgbybPp3njTwUc-IeXpR46WBPE"
                 }
                 mb={2}
                 pos={"relative"}
               />
-              <Heading fontSize={"md"} fontFamily={"body"}>
+              <Heading
+                fontSize={{ base: "xl", md: "xl", lg: "md" }}
+                fontFamily={"body"}
+              >
                 Hira Khan
               </Heading>
             </Box>
@@ -174,7 +183,7 @@ export default function Faculty() {
           <Center py={6}>
             <Box
               maxW={"280px"}
-              w="170px"
+              w={{ base: "300px", md: "300", lg: "170px" }}
               bg={"gray.900"}
               boxShadow={"2xl"}
               rounded={"lg"}
@@ -186,14 +195,17 @@ export default function Faculty() {
               style={{ animationDelay: "2s", opacity: 0 }}
             >
               <Avatar
-                size={"xl"}
+                size={{ base: "3xl", md: "3xl", lg: "xl" }}
                 src={
                   "https://media.licdn.com/dms/image/C4D03AQGeWhSxfJnvlw/profile-displayphoto-shrink_800_800/0/1632680095611?e=1680739200&v=beta&t=5364ux4tBEUyKhOkxMIhM1ST1s2yffzZSu17xt2Ktzw"
                 }
                 mb={2}
                 pos={"relative"}
               />
-              <Heading fontSize={"md"} fontFamily={"body"}>
+              <Heading
+                fontSize={{ base: "xl", md: "xl", lg: "md" }}
+                fontFamily={"body"}
+              >
                 Adil Altaf
               </Heading>
             </Box>
