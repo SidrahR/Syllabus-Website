@@ -60,13 +60,13 @@ export default function Header() {
   const fadeAnimation = `${fadeInAnimation} 1s forwards`;
   const headingStyle = { animationDelay: "1s", opacity: 0 };
   return (
-    <Box mt="10">
+    <Box mt={{ base: "0", lg: "10" }}>
       <Container maxW={"6xl"}>
         <Stack
           align={"center"}
           spacing={{ base: 8, md: 10 }}
           py={{ base: 10, md: 15 }}
-          direction={{ base: "column", md: "row" }}
+          direction={{ base: "column", md: "column", lg: "row" }}
         >
           <Stack flex={1} spacing={{ base: 5, md: 10 }}>
             <Heading
@@ -89,13 +89,17 @@ export default function Header() {
                   bgClip="text"
                   as={"span"}
                   position={"relative"}
-                  fontSize={"7xl"}
+                  fontSize={{ base: "4xl", md: "5xl", lg: "7xl" }}
                 >
                   Panaverse DAO
                 </Text>
               </Box>
             </Heading>
-            <Text color={"gray.800"} textAlign="justify" fontSize="15">
+            <Text
+              color={"gray.800"}
+              textAlign="justify"
+              fontSize={{ base: "15", md: "20", lg: "15" }}
+            >
               The Future of the Web is Web 3.0, Metaverse, and Edge Computing.
               Panaverse DAO is a movement to spread these technolgies globally.
               It is community of Web 3 and Metaverse developers, designers,
@@ -110,8 +114,8 @@ export default function Header() {
             w={"full"}
           >
             <Blob
-              w={{ base: "0", md: "120%" }}
-              h={{ base: "0", md: "140%" }}
+              w={{ base: "0", md: "0" }}
+              h={{ base: "0", md: "0" }}
               position={"absolute"}
               top={"-20%"}
               left={0}
@@ -140,30 +144,37 @@ export default function Header() {
       </Container>
 
       <Flex
-        mx="36"
-        mt="24"
+        mx={{ base: "5", md: "5", lg: "36" }}
+        mt={{ base: "5", md: "5", lg: "24" }}
         ref={myRef}
         animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
         style={{ opacity: 0 }}
+        direction={{ base: "column-reverse", md: "column-reverse", lg: "row" }}
       >
         <Image
           alt={"Earning"}
-          w={"40%"}
-          h={"35%"}
+          w={{ base: "90%", md: "80%", lg: "40%" }}
+          h={{ lg: "35%" }}
           borderRadius="10%"
           src={"/earn3.png.png"}
           boxShadow="dark-lg"
           backgroundSize="cover"
+          mt={{ base: "4" }}
+          alignSelf={{ base: "center" }}
         />
-        <VStack mx="20">
+        <VStack mx={{ base: "0", lg: "20" }}>
           <Heading
-            fontSize={"5xl"}
+            fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
             bgGradient="linear(to-l, red.600, red.500, red.600)"
             bgClip="text"
           >
             Earn While You Learn
           </Heading>
-          <Text pt="50" textAlign="justify" fontSize="15">
+          <Text
+            pt={{ base: "2", lg: "50" }}
+            textAlign="justify"
+            fontSize={{ base: "15", md: "20", lg: "15" }}
+          >
             In this brand-new type of curriculum, students will learn how to
             make money and boost exports in the classroom and will begin doing
             so within six months of the program’s beginning. It resembles a

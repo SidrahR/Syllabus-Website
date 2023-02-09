@@ -30,9 +30,9 @@ export default function Cities() {
   const slideBtoTAnimation = `${slideBtoTInAnimation} 1s forwards`;
   return (
     <Flex
-      mx="36"
-      mb="16"
-      mt="24"
+      mx={{ base: "5", lg: "36" }}
+      mb={{ base: "5", lg: "16" }}
+      mt={{ base: "8", lg: "24" }}
       ref={myRef}
       animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
       style={{ opacity: 0 }}
@@ -41,17 +41,23 @@ export default function Cities() {
       position="relative"
     >
       <Heading
-        fontSize={"5xl"}
         bgGradient="linear(to-l, red.600, red.500, red.600)"
         bgClip="text"
+        fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
       >
         Join our Community
       </Heading>
-      <Text mt="5" fontSize="15">
+      <Text mt="5" fontSize={{ base: "15", md: "20", lg: "15" }}>
         Apply for admissions today
       </Text>
-      <HStack spacing="10" mt="10" textAlign="center">
+      <HStack
+        spacing={{ base: "0", md: "5", lg: "10" }}
+        mt={{ base: "8", lg: "10" }}
+        textAlign="center"
+        flexDirection={{ base: "column", md: "row", lg: "row" }}
+      >
         <Box
+          pb={{ base: "8" }}
           _hover={{
             transform: "scale(1.1)",
             transition: "0.2s",
@@ -69,6 +75,7 @@ export default function Cities() {
         </Box>
 
         <Box
+          pb={{ base: "8" }}
           _hover={{
             transform: "scale(1.1)",
             transition: "0.2s",
@@ -86,6 +93,7 @@ export default function Cities() {
         </Box>
 
         <Box
+          pb={{ base: "8" }}
           _hover={{
             transform: "scale(1.1)",
             transition: "0.2s",
@@ -105,6 +113,7 @@ export default function Cities() {
         </Box>
 
         <Box
+          pb={{ base: "8" }}
           _hover={{
             transform: "scale(1.1)",
             transition: "0.2s",

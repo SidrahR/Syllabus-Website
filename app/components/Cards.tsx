@@ -39,6 +39,31 @@ const settings = {
   autoplaySpeed: 5000,
   slidesToShow: 3,
   slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: false,
+      },
+    },
+  ],
 };
 
 export default function Cards() {
@@ -57,17 +82,22 @@ export default function Cards() {
       ref={myRef}
       animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
       style={{ opacity: 0 }}
-      mt="24"
+      mt={{ base: "16", lg: "24" }}
     >
       <Heading
         textAlign="center"
-        fontSize={"5xl"}
+        fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
         bgGradient="linear(to-l, red.600, red.500, red.600)"
         bgClip="text"
       >
         Specialized Courses
       </Heading>
-      <Text textAlign="center" pt="5" fontSize="15">
+      <Text
+        textAlign="center"
+        pt="5"
+        fontSize={{ base: "15", md: "20", lg: "15" }}
+        mx={{ base: "2" }}
+      >
         After completing the core courses in first two quarters the participants
         will select one or more specializations consisting of two courses each
       </Text>
@@ -76,8 +106,8 @@ export default function Cards() {
         height={"600px"}
         width={"100%"}
         overflow={"hidden"}
-        paddingLeft="100px"
-        paddingRight="100px"
+        paddingLeft={{ base: "15px", lg: "100px" }}
+        paddingRight={{ base: "15px", lg: "100px" }}
       >
         {/* CSS files for react-slick */}
         <link

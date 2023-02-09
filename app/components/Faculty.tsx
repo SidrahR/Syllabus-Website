@@ -44,21 +44,29 @@ export default function Faculty() {
 
   return (
     <Flex
-      mx="36"
+      mx={{ base: "5", lg: "36" }}
       ref={myRef}
       animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
       style={{ opacity: 0 }}
+      flexDirection={{ base: "column", lg: "row" }}
     >
-      <Box w="60%" pr={"40"}>
+      <Box
+        w={{ base: "95%", md: "95%", lg: "60%" }}
+        pr={{ base: "0", md: "0", lg: "40" }}
+      >
         <Heading
-          fontSize={"5xl"}
+          fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
           bgGradient="linear(to-l, red.600, red.500, red.600)"
           bgClip="text"
           textAlign={"center"}
         >
           Meet the Inspiring Minds Shaping the Future
         </Heading>
-        <Text pt="5" fontSize="15" textAlign="justify">
+        <Text
+          pt="5"
+          fontSize={{ base: "15", md: "20", lg: "15" }}
+          textAlign="justify"
+        >
           Our faculty members are highly qualified and experienced professionals
           in their respective fields. They bring a wealth of knowledge and a
           passion for teaching to the classroom. With a commitment to student
@@ -69,7 +77,7 @@ export default function Faculty() {
         </Text>
       </Box>
 
-      <Box flexDirection="column">
+      <Box flexDirection="column" alignSelf={{ base: "center" }}>
         <HStack
           flexDirection={["column", "column", "row"]}
           spacing={["0", "0", "12"]}
