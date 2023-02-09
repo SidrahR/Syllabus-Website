@@ -57,6 +57,7 @@ export default function Cards() {
       ref={myRef}
       animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
       style={{ opacity: 0 }}
+      mt="24"
     >
       <Heading
         textAlign="center"

@@ -23,16 +23,28 @@ const slideBtoTInAnimation = keyframes`
   
 `;
 
+const fadeInAnimation = keyframes`
+   from {
+      opacity:0;
+    }
+    to {
+      opacity:1;
+    }
+  
+`;
+
 export default function Faculty() {
+  const fadeAnimation = `${fadeInAnimation} 1s forwards`;
+  const slideBtoTAnimation = `${slideBtoTInAnimation} 1s forwards`;
+
   const { ref: myRef, inView: ElementIsVisible } = useInView({
     triggerOnce: true,
     threshold: 0.3,
   });
-  const slideBtoTAnimation = `${slideBtoTInAnimation} 1s forwards`;
+
   return (
     <Flex
       mx="36"
-      my="12"
       ref={myRef}
       animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
       style={{ opacity: 0 }}
@@ -72,6 +84,9 @@ export default function Faculty() {
               p={2}
               textAlign={"center"}
               backgroundColor={"#01b3bd"}
+              ref={myRef}
+              animation={`${ElementIsVisible ? fadeAnimation : ""} `}
+              style={{ animationDelay: "0.5s", opacity: 0 }}
             >
               <Avatar
                 size={"xl"}
@@ -97,6 +112,9 @@ export default function Faculty() {
               p={2}
               textAlign={"center"}
               backgroundColor={"#01b3bd"}
+              ref={myRef}
+              animation={`${ElementIsVisible ? fadeAnimation : ""} `}
+              style={{ animationDelay: "1s", opacity: 0 }}
             >
               <Avatar
                 size={"xl"}
@@ -127,6 +145,9 @@ export default function Faculty() {
               p={2}
               textAlign={"center"}
               backgroundColor={"#01b3bd"}
+              ref={myRef}
+              animation={`${ElementIsVisible ? fadeAnimation : ""} `}
+              style={{ animationDelay: "1.5s", opacity: 0 }}
             >
               <Avatar
                 size={"xl"}
@@ -152,6 +173,9 @@ export default function Faculty() {
               p={2}
               textAlign={"center"}
               backgroundColor={"#01b3bd"}
+              ref={myRef}
+              animation={`${ElementIsVisible ? fadeAnimation : ""} `}
+              style={{ animationDelay: "2s", opacity: 0 }}
             >
               <Avatar
                 size={"xl"}

@@ -141,7 +141,7 @@ export default function Header() {
 
       <Flex
         mx="36"
-        my="32"
+        mt="24"
         ref={myRef}
         animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
         style={{ opacity: 0 }}

@@ -32,7 +32,7 @@ export default function Cities() {
     <Flex
       mx="36"
       mb="16"
-      mt="32"
+      mt="24"
       ref={myRef}
       animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
       style={{ opacity: 0 }}
