@@ -1,18 +1,15 @@
 import React from "react";
-import {
-  Heading,
-  Text,
-  UnorderedList,
-  ListItem,
-  Flex,
-  Box,
-} from "@chakra-ui/react";
+import { Heading, Text, UnorderedList, ListItem, Box } from "@chakra-ui/react";
 
 export default function CoreCourses() {
   return (
     <>
       <Box pt="10px" width={["80%", "80%", "45%"]} margin="auto">
-        <Heading textAlign="center">
+        <Heading
+          textAlign="center"
+          bgGradient="linear(to-l, red.600, red.500, red.600)"
+          bgClip="text"
+        >
           Core Courses (Common in All Specializations)
         </Heading>
         <Text pb="20px" fontSize="lg" pt="10px" textAlign="center">

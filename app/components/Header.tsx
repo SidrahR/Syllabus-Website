@@ -13,10 +13,23 @@ import {
   VStack,
   keyframes,
 } from "@chakra-ui/react";
+import { useInView } from "react-intersection-observer";
 
 const slideInAnimation = keyframes`
    from {
       transform: translateY(-100%);
+      opacity:0;
+    }
+    to {
+      transform: translateX(0%);
+      opacity:1;
+    }
+  
+`;
+
+const slideBtoTInAnimation = keyframes`
+   from {
+      transform: translateY(100%);
       opacity:0;
     }
     to {
@@ -37,11 +50,17 @@ const fadeInAnimation = keyframes`
 `;
 
 export default function Header() {
-  const slideAnimation = `${slideInAnimation} 2s`;
-  const fadeAnimation = `${fadeInAnimation} 1.5s forwards`;
-  const headingStyle = { animationDelay: "1.5s", opacity: 0 };
+  const { ref: myRef, inView: ElementIsVisible } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+
+  const slideAnimation = `${slideInAnimation} 1s`;
+  const slideBtoTAnimation = `${slideBtoTInAnimation} 1s forwards`;
+  const fadeAnimation = `${fadeInAnimation} 1s forwards`;
+  const headingStyle = { animationDelay: "1s", opacity: 0 };
   return (
-    <Box>
+    <Box mt="10">
       <Container maxW={"6xl"}>
         <Stack
           align={"center"}
@@ -76,7 +95,7 @@ export default function Header() {
                 </Text>
               </Box>
             </Heading>
-            <Text color={"gray.800"}>
+            <Text color={"gray.800"} textAlign="justify" fontSize="15">
               The Future of the Web is Web 3.0, Metaverse, and Edge Computing.
               Panaverse DAO is a movement to spread these technolgies globally.
               It is community of Web 3 and Metaverse developers, designers,
@@ -120,7 +139,13 @@ export default function Header() {
         </Stack>
       </Container>
 
-      <Flex mx="36" my="20">
+      <Flex
+        mx="36"
+        my="32"
+        ref={myRef}
+        animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
+        style={{ opacity: 0 }}
+      >
         <Image
           alt={"Earning"}
           w={"40%"}
@@ -135,12 +160,10 @@ export default function Header() {
             fontSize={"5xl"}
             bgGradient="linear(to-l, red.600, red.500, red.600)"
             bgClip="text"
-            animation={fadeAnimation}
-            style={headingStyle}
           >
             Earn While You Learn
           </Heading>
-          <Text pt="50" textAlign="justify" color={"gray.800"}>
+          <Text pt="50" textAlign="justify" fontSize="15">
             In this brand-new type of curriculum, students will learn how to
             make money and boost exports in the classroom and will begin doing
             so within six months of the program’s beginning. It resembles a

@@ -65,11 +65,11 @@ export default function Footer() {
           <Link pt="15px" href={"/"}>
             <Image src="/piaicLogo.png" alt="piaic logo" boxSize="30px" />
           </Link>
-          <Link pt="17px" href={"#"}>
-            About
+          <Link pt="17px" href={"/"}>
+            Home
           </Link>
-          <Link pt="17px" href={"#"}>
-            Blog
+          <Link pt="17px" href={"/faculty"}>
+            Faculty
           </Link>
           <Link pt="17px" href={"#"}>
             Contact

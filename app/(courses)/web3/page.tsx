@@ -7,12 +7,16 @@ import { Box, Heading, Text, UnorderedList, ListItem } from "@chakra-ui/react";
 
 export default function page() {
   return (
-    <Box bgGradient="linear(teal.50, teal.100, teal.200, teal.300)">
+    <Box bgGradient="linear(teal.50, teal.100, teal.200)">
       <Navbar />
       <CoreCourses />
 
       <Box py="50px" width={["80%", "80%", "45%"]} margin="auto">
-        <Heading textAlign="center">
+        <Heading
+          textAlign="center"
+          bgGradient="linear(to-l, red.600, red.500, red.600)"
+          bgClip="text"
+        >
           Web 3.0 and Metaverse - Specialized Tracks
         </Heading>
         <Text pb="20px" fontSize="lg" pt="10px" textAlign="center">

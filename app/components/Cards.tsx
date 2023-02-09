@@ -9,10 +9,25 @@ import {
   useBreakpointValue,
   Center,
   Text,
+  keyframes,
+  Flex,
 } from "@chakra-ui/react";
 import React from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import Slider from "react-slick";
+import { useInView } from "react-intersection-observer";
+
+const slideBtoTInAnimation = keyframes`
+   from {
+      transform: translateY(100%);
+      opacity:0;
+    }
+    to {
+      transform: translateX(0%);
+      opacity:1;
+    }
+  
+`;
 
 const settings = {
   dots: true,
@@ -27,19 +42,31 @@ const settings = {
 };
 
 export default function Cards() {
+  const { ref: myRef, inView: ElementIsVisible } = useInView({
+    triggerOnce: true,
+    threshold: 0.3,
+  });
+  const slideBtoTAnimation = `${slideBtoTInAnimation} 1s forwards`;
+
   const [slider, setSlider] = React.useState<Slider | null>(null);
   const top = useBreakpointValue({ base: "90%", md: "50%" });
   const side = useBreakpointValue({ base: "30%", md: "40px" });
   return (
-    <Box textAlign="center">
+    <Flex
+      direction="column"
+      ref={myRef}
+      animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
+      style={{ opacity: 0 }}
+    >
       <Heading
+        textAlign="center"
         fontSize={"5xl"}
         bgGradient="linear(to-l, red.600, red.500, red.600)"
         bgClip="text"
       >
         Specialized Courses
       </Heading>
-      <Text textAlign="center" pt="5">
+      <Text textAlign="center" pt="5" fontSize="15">
         After completing the core courses in first two quarters the participants
         will select one or more specializations consisting of two courses each
       </Text>
@@ -95,7 +122,7 @@ export default function Cards() {
             <Box
               role={"group"}
               p={6}
-              maxW={"350px"}
+              maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
               boxShadow={"2xl"}
@@ -135,7 +162,7 @@ export default function Cards() {
                   alt="Web 3.0 (Blockchain) and Metaverse"
                 />
               </Box>
-              <Stack pt={10} align={"center"}>
+              <Stack pt={5} align={"center"}>
                 <Heading
                   fontSize={"2xl"}
                   fontFamily={"body"}
@@ -145,8 +172,12 @@ export default function Cards() {
                 >
                   Web 3.0 (Blockchain) and Metaverse
                 </Heading>
-                <Stack direction={"row"} align={"center"} pt={5}>
-                  <Link href="/web3" style={{ textDecoration: "none" }}>
+                <Stack direction={"row"} align={"center"} pt={1}>
+                  <Link
+                    href="/web3"
+                    style={{ textDecoration: "none" }}
+                    target="_blank"
+                  >
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
@@ -168,7 +199,7 @@ export default function Cards() {
             <Box
               role={"group"}
               p={6}
-              maxW={"350px"}
+              maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
               boxShadow={"2xl"}
@@ -208,7 +239,7 @@ export default function Cards() {
                   alt="AI & deep learning"
                 />
               </Box>
-              <Stack pt={10} align={"center"}>
+              <Stack pt={5} align={"center"}>
                 <Heading
                   fontSize={"2xl"}
                   fontFamily={"body"}
@@ -218,8 +249,12 @@ export default function Cards() {
                 >
                   Artificial Intelligence (AI) and Deep Learning
                 </Heading>
-                <Stack direction={"row"} align={"center"} pt={5}>
-                  <Link href="/ai" style={{ textDecoration: "none" }}>
+                <Stack direction={"row"} align={"center"} pt={1}>
+                  <Link
+                    href="/ai"
+                    style={{ textDecoration: "none" }}
+                    target="_blank"
+                  >
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
@@ -241,7 +276,7 @@ export default function Cards() {
             <Box
               role={"group"}
               p={6}
-              maxW={"350px"}
+              maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
               boxShadow={"2xl"}
@@ -281,7 +316,7 @@ export default function Cards() {
                   alt="Cloud-Native Computing"
                 />
               </Box>
-              <Stack pt={10} align={"center"}>
+              <Stack pt={5} align={"center"}>
                 <Heading
                   fontSize={"2xl"}
                   fontFamily={"body"}
@@ -292,8 +327,12 @@ export default function Cards() {
                   Cloud-Native Computing{" "}
                   <Text color={"#01b3bd"}>Computing</Text>
                 </Heading>
-                <Stack direction={"row"} align={"center"} pt={5}>
-                  <Link href="/cloud_native" style={{ textDecoration: "none" }}>
+                <Stack direction={"row"} align={"center"} pt={1}>
+                  <Link
+                    href="/cloud_native"
+                    style={{ textDecoration: "none" }}
+                    target="_blank"
+                  >
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
@@ -315,7 +354,7 @@ export default function Cards() {
             <Box
               role={"group"}
               p={6}
-              maxW={"350px"}
+              maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
               boxShadow={"2xl"}
@@ -355,7 +394,7 @@ export default function Cards() {
                   alt="Ambient Computing and IoT"
                 />
               </Box>
-              <Stack pt={10} align={"center"}>
+              <Stack pt={5} align={"center"}>
                 <Heading
                   fontSize={"2xl"}
                   fontFamily={"body"}
@@ -365,8 +404,12 @@ export default function Cards() {
                 >
                   Ambient Computing and IoT
                 </Heading>
-                <Stack direction={"row"} align={"center"} pt={5}>
-                  <Link href="/iot" style={{ textDecoration: "none" }}>
+                <Stack direction={"row"} align={"center"} pt={1}>
+                  <Link
+                    href="/iot"
+                    style={{ textDecoration: "none" }}
+                    target="_blank"
+                  >
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
@@ -388,7 +431,7 @@ export default function Cards() {
             <Box
               role={"group"}
               p={6}
-              maxW={"350px"}
+              maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
               boxShadow={"2xl"}
@@ -428,7 +471,7 @@ export default function Cards() {
                   alt="Genomics and Bioinformatics"
                 />
               </Box>
-              <Stack pt={10} align={"center"}>
+              <Stack pt={5} align={"center"}>
                 <Heading
                   fontSize={"2xl"}
                   fontFamily={"body"}
@@ -438,8 +481,12 @@ export default function Cards() {
                 >
                   Genomics and Bioinformatics
                 </Heading>
-                <Stack direction={"row"} align={"center"} pt={5}>
-                  <Link href="/genomics" style={{ textDecoration: "none" }}>
+                <Stack direction={"row"} align={"center"} pt={1}>
+                  <Link
+                    href="/genomics"
+                    style={{ textDecoration: "none" }}
+                    target="_blank"
+                  >
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
@@ -461,7 +508,7 @@ export default function Cards() {
             <Box
               role={"group"}
               p={6}
-              maxW={"350px"}
+              maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
               boxShadow={"2xl"}
@@ -501,7 +548,7 @@ export default function Cards() {
                   alt={"Network Programmability and Automation"}
                 />
               </Box>
-              <Stack pt={10} align={"center"}>
+              <Stack pt={5} align={"center"}>
                 <Heading
                   fontSize={"2xl"}
                   fontFamily={"body"}
@@ -511,8 +558,12 @@ export default function Cards() {
                 >
                   Network Programmability and Automation
                 </Heading>
-                <Stack direction={"row"} align={"center"} pt={5}>
-                  <Link href="/automation" style={{ textDecoration: "none" }}>
+                <Stack direction={"row"} align={"center"} pt={1}>
+                  <Link
+                    href="/automation"
+                    style={{ textDecoration: "none" }}
+                    target="_blank"
+                  >
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
@@ -531,6 +582,6 @@ export default function Cards() {
           </Center>
         </Slider>
       </Box>
-    </Box>
+    </Flex>
   );
 }
