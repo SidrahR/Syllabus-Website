@@ -178,7 +178,11 @@ export default function Header() {
             In this brand-new type of curriculum, students will learn how to
             make money and boost exports in the classroom and will begin doing
             so within six months of the program’s beginning. It resembles a
-            cross between a corporate venture and an educational project.
+            cross between a corporate venture and an educational project. This
+            curriculum is intended for beginners who want to learn software
+            development from the ground up. The first three quarters are shared
+            by all specialties and are dedicated to studying Object-Oriented
+            Programming and cutting-edge Full-Stack Web 2.0 development.
           </Text>
         </VStack>
       </Flex>

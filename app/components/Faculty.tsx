@@ -58,7 +58,7 @@ export default function Faculty() {
           fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
           bgGradient="linear(to-l, red.600, red.500, red.600)"
           bgClip="text"
-          textAlign={"center"}
+          textAlign={"left"}
         >
           Meet the Inspiring Minds Shaping the Future
         </Heading>
