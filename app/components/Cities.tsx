@@ -54,7 +54,7 @@ export default function Cities() {
         spacing={{ base: "0", md: "5", lg: "10" }}
         mt={{ base: "8", lg: "10" }}
         textAlign="center"
-        flexDirection={{ base: "column", md: "row", lg: "row" }}
+        flexDirection={{ base: "column", md: "column", lg: "row" }}
       >
         <Box
           pb={{ base: "8" }}
@@ -64,11 +64,11 @@ export default function Cities() {
           }}
         >
           <Image
-            height="150px"
+            height="200px"
             width="300px"
             alt={"Karachi"}
             borderRadius="10%"
-            src="https://blog.graana.com/wp-content/uploads/2022/03/0f62dd7db5572ff8e87d34d957464495.jpg"
+            src="/karachi.jpg"
             boxShadow="dark-lg"
           />
           <Text mt="5">Karachi</Text>
@@ -82,11 +82,11 @@ export default function Cities() {
           }}
         >
           <Image
-            height="150px"
+            height="200px"
             width="300px"
             alt={"Lahore"}
             borderRadius="10%"
-            src="https://aaaassociates.com/wp-content/uploads/2021/11/minare-pakistan-lahore.jpg"
+            src="/lahore.webp"
             boxShadow="dark-lg"
           />
           <Text mt="5">Lahore</Text>
@@ -100,11 +100,11 @@ export default function Cities() {
           }}
         >
           <Image
-            height="150px"
+            height="200px"
             width="300px"
             alt={"Islamabad"}
             borderRadius="10%"
-            src="https://www.researchgate.net/publication/313765674/figure/fig3/AS:670020954775560@1536756852316/Dome-form-and-feature-of-the-Shah-Faisal-Mosque.jpg"
+            src="/islamabad.png"
             boxShadow="dark-lg"
           />
           <Text mt="5" fontSize="lg">
@@ -120,11 +120,11 @@ export default function Cities() {
           }}
         >
           <Image
-            height="150px"
+            height="200px"
             width="300px"
             alt={"Peshawar"}
             borderRadius="10%"
-            src="https://media-cdn.tripadvisor.com/media/photo-s/18/e1/a7/80/bab-e-khyber.jpg"
+            src="/peshawar.jpg"
             boxShadow="dark-lg"
           />
           <Text mt="5">Peshawar</Text>

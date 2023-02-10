@@ -106,8 +106,8 @@ export default function Cards() {
         height={"600px"}
         width={"100%"}
         overflow={"hidden"}
-        paddingLeft={{ base: "15px", lg: "100px" }}
-        paddingRight={{ base: "15px", lg: "100px" }}
+        paddingLeft={{ base: "20px", md: "40px", lg: "100px" }}
+        paddingRight={{ base: "15px", md: "10px", lg: "100px" }}
       >
         {/* CSS files for react-slick */}
         <link
@@ -156,7 +156,7 @@ export default function Cards() {
               maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
-              boxShadow={"2xl"}
+              boxShadow={"xl"}
               rounded={"lg"}
               pos={"relative"}
               zIndex={1}
@@ -174,7 +174,7 @@ export default function Cards() {
                   pos: "absolute",
                   top: 5,
                   left: 0,
-                  backgroundColor: "gray.800",
+                  backgroundColor: "gray.600",
                   filter: "blur(15px)",
                   zIndex: -1,
                 }}
@@ -189,7 +189,7 @@ export default function Cards() {
                   height={230}
                   width={282}
                   objectFit={"cover"}
-                  src="https://images.theconversation.com/files/414962/original/file-20210806-17-jibbct.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=1200&h=1200.0&fit=crop"
+                  src="/web3.avif"
                   alt="Web 3.0 (Blockchain) and Metaverse"
                 />
               </Box>
@@ -212,6 +212,7 @@ export default function Cards() {
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
+                      mt="2"
                       color={"white"}
                       bg={"red.700"}
                       _hover={{
@@ -233,7 +234,7 @@ export default function Cards() {
               maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
-              boxShadow={"2xl"}
+              boxShadow={"xl"}
               rounded={"lg"}
               pos={"relative"}
               zIndex={1}
@@ -251,7 +252,7 @@ export default function Cards() {
                   pos: "absolute",
                   top: 5,
                   left: 0,
-                  backgroundColor: "gray.800",
+                  backgroundColor: "gray.600",
                   filter: "blur(15px)",
                   zIndex: -1,
                 }}
@@ -266,7 +267,7 @@ export default function Cards() {
                   height={230}
                   width={282}
                   objectFit={"cover"}
-                  src="https://emarsys.com/app/uploads/2020/03/real-ai.jpg"
+                  src="/ai.jpg"
                   alt="AI & deep learning"
                 />
               </Box>
@@ -289,6 +290,7 @@ export default function Cards() {
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
+                      mt="2"
                       color={"white"}
                       bg={"red.700"}
                       _hover={{
@@ -310,7 +312,7 @@ export default function Cards() {
               maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
-              boxShadow={"2xl"}
+              boxShadow={"xl"}
               rounded={"lg"}
               pos={"relative"}
               zIndex={1}
@@ -328,7 +330,7 @@ export default function Cards() {
                   pos: "absolute",
                   top: 5,
                   left: 0,
-                  backgroundColor: "gray.800",
+                  backgroundColor: "gray.600",
                   filter: "blur(15px)",
                   zIndex: -1,
                 }}
@@ -343,7 +345,7 @@ export default function Cards() {
                   height={230}
                   width={282}
                   objectFit={"cover"}
-                  src="https://images.techhive.com/images/article/2015/06/cloud-development-ts-100588283-large.jpg?auto=webp&quality=85,70"
+                  src="/cnc.webp"
                   alt="Cloud-Native Computing"
                 />
               </Box>
@@ -367,6 +369,7 @@ export default function Cards() {
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
+                      mt="2"
                       color={"white"}
                       bg={"red.700"}
                       _hover={{
@@ -388,7 +391,7 @@ export default function Cards() {
               maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
-              boxShadow={"2xl"}
+              boxShadow={"xl"}
               rounded={"lg"}
               pos={"relative"}
               zIndex={1}
@@ -406,7 +409,7 @@ export default function Cards() {
                   pos: "absolute",
                   top: 5,
                   left: 0,
-                  backgroundColor: "gray.800",
+                  backgroundColor: "gray.600",
                   filter: "blur(15px)",
                   zIndex: -1,
                 }}
@@ -421,7 +424,7 @@ export default function Cards() {
                   height={230}
                   width={282}
                   objectFit={"cover"}
-                  src="https://www.lifely.cc/wp-content/uploads/2022/07/IoT.jpeg"
+                  src="/iot.jpeg"
                   alt="Ambient Computing and IoT"
                 />
               </Box>
@@ -444,6 +447,7 @@ export default function Cards() {
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
+                      mt="2"
                       color={"white"}
                       bg={"red.700"}
                       _hover={{
@@ -465,7 +469,7 @@ export default function Cards() {
               maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
-              boxShadow={"2xl"}
+              boxShadow={"xl"}
               rounded={"lg"}
               pos={"relative"}
               zIndex={1}
@@ -483,7 +487,7 @@ export default function Cards() {
                   pos: "absolute",
                   top: 5,
                   left: 0,
-                  backgroundColor: "gray.800",
+                  backgroundColor: "gray.600",
                   filter: "blur(15px)",
                   zIndex: -1,
                 }}
@@ -498,7 +502,7 @@ export default function Cards() {
                   height={230}
                   width={282}
                   objectFit={"cover"}
-                  src="https://www.unr.edu/main/images/divisions/research-innovation/ncb/dna.jpg"
+                  src="/bio.jpg"
                   alt="Genomics and Bioinformatics"
                 />
               </Box>
@@ -521,6 +525,7 @@ export default function Cards() {
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
+                      mt="2"
                       color={"white"}
                       bg={"red.700"}
                       _hover={{
@@ -542,7 +547,7 @@ export default function Cards() {
               maxW={"335px"}
               w={"full"}
               backgroundColor={"#01b3bd"}
-              boxShadow={"2xl"}
+              boxShadow={"xl"}
               rounded={"lg"}
               pos={"relative"}
               zIndex={1}
@@ -560,7 +565,7 @@ export default function Cards() {
                   pos: "absolute",
                   top: 5,
                   left: 0,
-                  backgroundColor: "gray.800",
+                  backgroundColor: "gray.600",
                   filter: "blur(15px)",
                   zIndex: -1,
                 }}
@@ -575,7 +580,7 @@ export default function Cards() {
                   height={230}
                   width={282}
                   objectFit={"cover"}
-                  src="https://industrywired.com/wp-content/uploads/2019/08/How_to-Embrace-Automation-for-Business-Success.jpg"
+                  src="/automation.jpg"
                   alt={"Network Programmability and Automation"}
                 />
               </Box>
@@ -598,6 +603,7 @@ export default function Cards() {
                     <Button
                       fontSize={"md"}
                       fontWeight={500}
+                      mt="2"
                       color={"white"}
                       bg={"red.700"}
                       _hover={{

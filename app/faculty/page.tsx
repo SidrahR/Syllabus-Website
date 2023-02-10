@@ -54,9 +54,7 @@ export default function page() {
             >
               <Avatar
                 size={"xl"}
-                src={
-                  "https://scontent.fisb6-2.fna.fbcdn.net/v/t39.30808-6/263273711_10158351180047623_7045526683278197383_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeGydZC0V3XDmOaR7b-Zt4226dXcOl3Y_4Dp1dw6Xdj_gNQzasCwq-RpiRW1x8y9Bek&_nc_ohc=sWnLX3hlNv4AX_djW-J&_nc_ht=scontent.fisb6-2.fna&oh=00_AfCxT5Uj-iGWmlw4QhIJtpk0ON-eYB2ogti4-Xc7Q9jjBA&oe=63E25B53"
-                }
+                src={"/zia_khan.jpg"}
                 mb={4}
                 pos={"relative"}
               />
@@ -85,9 +83,7 @@ export default function page() {
             >
               <Avatar
                 size={"xl"}
-                src={
-                  "https://media.licdn.com/dms/image/C4D03AQE1Hzv61ccMVw/profile-displayphoto-shrink_800_800/0/1556048207367?e=1680739200&v=beta&t=Wi1q3Iy2rTnTI11ytdrHq8h7KEDx4TrAonNHlm92eUQ"
-                }
+                src={"/daniyal.jpg"}
                 mb={4}
                 pos={"relative"}
               />
@@ -116,9 +112,7 @@ export default function page() {
             >
               <Avatar
                 size={"xl"}
-                src={
-                  "https://media.licdn.com/dms/image/C4D03AQFuhdYPmkC0sA/profile-displayphoto-shrink_800_800/0/1562700934047?e=1680739200&v=beta&t=tlU5jHuVIzQIWmOxCLgbybPp3njTwUc-IeXpR46WBPE"
-                }
+                src={"/hira_khan.jpg"}
                 mb={4}
                 pos={"relative"}
               />
@@ -146,9 +140,7 @@ export default function page() {
             >
               <Avatar
                 size={"xl"}
-                src={
-                  "https://media.licdn.com/dms/image/C4D03AQGeWhSxfJnvlw/profile-displayphoto-shrink_800_800/0/1632680095611?e=1680739200&v=beta&t=5364ux4tBEUyKhOkxMIhM1ST1s2yffzZSu17xt2Ktzw"
-                }
+                src={"/adil_altaf.jpg"}
                 mb={4}
                 pos={"relative"}
               />
