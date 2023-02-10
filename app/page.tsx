@@ -10,7 +10,7 @@ import { Box } from "@chakra-ui/react";
 
 export default function Home() {
   return (
-    <Box bgGradient="linear(teal.50, teal.100, teal.200)">
+    <Box bgGradient="linear(to-br,teal.50, teal.100, teal.200)">
       <Navbar />
       <Header />
       <Cards />
