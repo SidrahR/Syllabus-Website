@@ -114,8 +114,8 @@ export default function Header() {
             w={"full"}
           >
             <Blob
-              w={{ base: "0", md: "0" }}
-              h={{ base: "0", md: "0" }}
+              w={{ base: "0", md: "0", lg: "120%" }}
+              h={{ base: "0", md: "0", lg: "140%" }}
               position={"absolute"}
               top={"-20%"}
               left={0}
