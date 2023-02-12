@@ -11,11 +11,11 @@ import {
   Text,
   keyframes,
   Flex,
-} from "@chakra-ui/react";
-import React from "react";
-import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
-import Slider from "react-slick";
-import { useInView } from "react-intersection-observer";
+} from "@chakra-ui/react"
+import React, { useEffect } from "react"
+import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi"
+import Slider from "react-slick"
+import { useInView } from "react-intersection-observer"
 
 const slideBtoTInAnimation = keyframes`
    from {
@@ -27,7 +27,7 @@ const slideBtoTInAnimation = keyframes`
       opacity:1;
     }
   
-`;
+`
 
 const settings = {
   dots: true,
@@ -64,18 +64,33 @@ const settings = {
       },
     },
   ],
-};
+}
 
 export default function Cards() {
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const url = "/api/data?name=Ali"
+        const res = await fetch(url)
+        const jsonRes = await res.json()
+        console.log(jsonRes)
+        return jsonRes
+      } catch (e) {
+        console.log(e.toString())
+      }
+    }
+    getData()
+  }, [])
+
   const { ref: myRef, inView: ElementIsVisible } = useInView({
     triggerOnce: true,
     threshold: 0.3,
-  });
-  const slideBtoTAnimation = `${slideBtoTInAnimation} 1s forwards`;
+  })
+  const slideBtoTAnimation = `${slideBtoTInAnimation} 1s forwards`
 
-  const [slider, setSlider] = React.useState<Slider | null>(null);
-  const top = useBreakpointValue({ base: "90%", md: "50%" });
-  const side = useBreakpointValue({ base: "30%", md: "40px" });
+  const [slider, setSlider] = React.useState<Slider | null>(null)
+  const top = useBreakpointValue({ base: "90%", md: "50%" })
+  const side = useBreakpointValue({ base: "30%", md: "40px" })
   return (
     <Flex
       direction="column"
@@ -148,477 +163,8 @@ export default function Cards() {
           <BiRightArrowAlt size="40px" />
         </IconButton>
         {/* Slider */}
-        <Slider {...settings} ref={(slider) => setSlider(slider)}>
-          <Center py={12}>
-            <Box
-              role={"group"}
-              p={6}
-              maxW={"335px"}
-              w={"full"}
-              backgroundColor={"#01b3bd"}
-              boxShadow={"xl"}
-              rounded={"lg"}
-              pos={"relative"}
-              zIndex={1}
-            >
-              <Box
-                rounded={"lg"}
-                mt={-8}
-                pos={"relative"}
-                height={"230px"}
-                _after={{
-                  transition: "all .3s ease",
-                  content: '""',
-                  w: "full",
-                  h: "full",
-                  pos: "absolute",
-                  top: 5,
-                  left: 0,
-                  backgroundColor: "gray.600",
-                  filter: "blur(15px)",
-                  zIndex: -1,
-                }}
-                _groupHover={{
-                  _after: {
-                    filter: "blur(20px)",
-                  },
-                }}
-              >
-                <Image
-                  rounded={"lg"}
-                  height={230}
-                  width={282}
-                  objectFit={"cover"}
-                  src="/web3.avif"
-                  alt="Web 3.0 (Blockchain) and Metaverse"
-                />
-              </Box>
-              <Stack pt={5} align={"center"}>
-                <Heading
-                  fontSize={"2xl"}
-                  fontFamily={"body"}
-                  fontWeight={600}
-                  color={"white"}
-                  textAlign="center"
-                >
-                  Web 3.0 (Blockchain) and Metaverse
-                </Heading>
-                <Stack direction={"row"} align={"center"} pt={1}>
-                  <Link
-                    href="/web3"
-                    style={{ textDecoration: "none" }}
-                    target="_blank"
-                  >
-                    <Button
-                      fontSize={"md"}
-                      fontWeight={500}
-                      mt="2"
-                      color={"white"}
-                      bg={"red.700"}
-                      _hover={{
-                        bg: "red.800",
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Box>
-          </Center>
-
-          <Center py={12}>
-            <Box
-              role={"group"}
-              p={6}
-              maxW={"335px"}
-              w={"full"}
-              backgroundColor={"#01b3bd"}
-              boxShadow={"xl"}
-              rounded={"lg"}
-              pos={"relative"}
-              zIndex={1}
-            >
-              <Box
-                rounded={"lg"}
-                mt={-8}
-                pos={"relative"}
-                height={"230px"}
-                _after={{
-                  transition: "all .3s ease",
-                  content: '""',
-                  w: "full",
-                  h: "full",
-                  pos: "absolute",
-                  top: 5,
-                  left: 0,
-                  backgroundColor: "gray.600",
-                  filter: "blur(15px)",
-                  zIndex: -1,
-                }}
-                _groupHover={{
-                  _after: {
-                    filter: "blur(20px)",
-                  },
-                }}
-              >
-                <Image
-                  rounded={"lg"}
-                  height={230}
-                  width={282}
-                  objectFit={"cover"}
-                  src="/ai.jpg"
-                  alt="AI & deep learning"
-                />
-              </Box>
-              <Stack pt={5} align={"center"}>
-                <Heading
-                  fontSize={"2xl"}
-                  fontFamily={"body"}
-                  fontWeight={600}
-                  color={"white"}
-                  textAlign="center"
-                >
-                  Artificial Intelligence (AI) and Deep Learning
-                </Heading>
-                <Stack direction={"row"} align={"center"} pt={1}>
-                  <Link
-                    href="/ai"
-                    style={{ textDecoration: "none" }}
-                    target="_blank"
-                  >
-                    <Button
-                      fontSize={"md"}
-                      fontWeight={500}
-                      mt="2"
-                      color={"white"}
-                      bg={"red.700"}
-                      _hover={{
-                        bg: "red.800",
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Box>
-          </Center>
-
-          <Center py={12}>
-            <Box
-              role={"group"}
-              p={6}
-              maxW={"335px"}
-              w={"full"}
-              backgroundColor={"#01b3bd"}
-              boxShadow={"xl"}
-              rounded={"lg"}
-              pos={"relative"}
-              zIndex={1}
-            >
-              <Box
-                rounded={"lg"}
-                mt={-8}
-                pos={"relative"}
-                height={"230px"}
-                _after={{
-                  transition: "all .3s ease",
-                  content: '""',
-                  w: "full",
-                  h: "full",
-                  pos: "absolute",
-                  top: 5,
-                  left: 0,
-                  backgroundColor: "gray.600",
-                  filter: "blur(15px)",
-                  zIndex: -1,
-                }}
-                _groupHover={{
-                  _after: {
-                    filter: "blur(20px)",
-                  },
-                }}
-              >
-                <Image
-                  rounded={"lg"}
-                  height={230}
-                  width={282}
-                  objectFit={"cover"}
-                  src="/cnc.webp"
-                  alt="Cloud-Native Computing"
-                />
-              </Box>
-              <Stack pt={5} align={"center"}>
-                <Heading
-                  fontSize={"2xl"}
-                  fontFamily={"body"}
-                  fontWeight={600}
-                  color={"white"}
-                  textAlign="center"
-                >
-                  Cloud-Native Computing{" "}
-                  <Text color={"#01b3bd"}>Computing</Text>
-                </Heading>
-                <Stack direction={"row"} align={"center"} pt={1}>
-                  <Link
-                    href="/cloud_native"
-                    style={{ textDecoration: "none" }}
-                    target="_blank"
-                  >
-                    <Button
-                      fontSize={"md"}
-                      fontWeight={500}
-                      mt="2"
-                      color={"white"}
-                      bg={"red.700"}
-                      _hover={{
-                        bg: "red.800",
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Box>
-          </Center>
-
-          <Center py={12}>
-            <Box
-              role={"group"}
-              p={6}
-              maxW={"335px"}
-              w={"full"}
-              backgroundColor={"#01b3bd"}
-              boxShadow={"xl"}
-              rounded={"lg"}
-              pos={"relative"}
-              zIndex={1}
-            >
-              <Box
-                rounded={"lg"}
-                mt={-8}
-                pos={"relative"}
-                height={"230px"}
-                _after={{
-                  transition: "all .3s ease",
-                  content: '""',
-                  w: "full",
-                  h: "full",
-                  pos: "absolute",
-                  top: 5,
-                  left: 0,
-                  backgroundColor: "gray.600",
-                  filter: "blur(15px)",
-                  zIndex: -1,
-                }}
-                _groupHover={{
-                  _after: {
-                    filter: "blur(20px)",
-                  },
-                }}
-              >
-                <Image
-                  rounded={"lg"}
-                  height={230}
-                  width={282}
-                  objectFit={"cover"}
-                  src="/iot.jpeg"
-                  alt="Ambient Computing and IoT"
-                />
-              </Box>
-              <Stack pt={5} align={"center"}>
-                <Heading
-                  fontSize={"2xl"}
-                  fontFamily={"body"}
-                  fontWeight={600}
-                  color={"white"}
-                  textAlign="center"
-                >
-                  Ambient Computing and IoT
-                </Heading>
-                <Stack direction={"row"} align={"center"} pt={1}>
-                  <Link
-                    href="/iot"
-                    style={{ textDecoration: "none" }}
-                    target="_blank"
-                  >
-                    <Button
-                      fontSize={"md"}
-                      fontWeight={500}
-                      mt="2"
-                      color={"white"}
-                      bg={"red.700"}
-                      _hover={{
-                        bg: "red.800",
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Box>
-          </Center>
-
-          <Center py={12}>
-            <Box
-              role={"group"}
-              p={6}
-              maxW={"335px"}
-              w={"full"}
-              backgroundColor={"#01b3bd"}
-              boxShadow={"xl"}
-              rounded={"lg"}
-              pos={"relative"}
-              zIndex={1}
-            >
-              <Box
-                rounded={"lg"}
-                mt={-8}
-                pos={"relative"}
-                height={"230px"}
-                _after={{
-                  transition: "all .3s ease",
-                  content: '""',
-                  w: "full",
-                  h: "full",
-                  pos: "absolute",
-                  top: 5,
-                  left: 0,
-                  backgroundColor: "gray.600",
-                  filter: "blur(15px)",
-                  zIndex: -1,
-                }}
-                _groupHover={{
-                  _after: {
-                    filter: "blur(20px)",
-                  },
-                }}
-              >
-                <Image
-                  rounded={"lg"}
-                  height={230}
-                  width={282}
-                  objectFit={"cover"}
-                  src="/bio.jpg"
-                  alt="Genomics and Bioinformatics"
-                />
-              </Box>
-              <Stack pt={5} align={"center"}>
-                <Heading
-                  fontSize={"2xl"}
-                  fontFamily={"body"}
-                  fontWeight={600}
-                  color={"white"}
-                  textAlign="center"
-                >
-                  Genomics and Bioinformatics
-                </Heading>
-                <Stack direction={"row"} align={"center"} pt={1}>
-                  <Link
-                    href="/genomics"
-                    style={{ textDecoration: "none" }}
-                    target="_blank"
-                  >
-                    <Button
-                      fontSize={"md"}
-                      fontWeight={500}
-                      mt="2"
-                      color={"white"}
-                      bg={"red.700"}
-                      _hover={{
-                        bg: "red.800",
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Box>
-          </Center>
-
-          <Center py={12}>
-            <Box
-              role={"group"}
-              p={6}
-              maxW={"335px"}
-              w={"full"}
-              backgroundColor={"#01b3bd"}
-              boxShadow={"xl"}
-              rounded={"lg"}
-              pos={"relative"}
-              zIndex={1}
-            >
-              <Box
-                rounded={"lg"}
-                mt={-8}
-                pos={"relative"}
-                height={"230px"}
-                _after={{
-                  transition: "all .3s ease",
-                  content: '""',
-                  w: "full",
-                  h: "full",
-                  pos: "absolute",
-                  top: 5,
-                  left: 0,
-                  backgroundColor: "gray.600",
-                  filter: "blur(15px)",
-                  zIndex: -1,
-                }}
-                _groupHover={{
-                  _after: {
-                    filter: "blur(20px)",
-                  },
-                }}
-              >
-                <Image
-                  rounded={"lg"}
-                  height={230}
-                  width={282}
-                  objectFit={"cover"}
-                  src="/automation.jpg"
-                  alt={"Network Programmability and Automation"}
-                />
-              </Box>
-              <Stack pt={5} align={"center"}>
-                <Heading
-                  fontSize={"2xl"}
-                  fontFamily={"body"}
-                  fontWeight={600}
-                  color={"white"}
-                  textAlign="center"
-                >
-                  Network Programmability and Automation
-                </Heading>
-                <Stack direction={"row"} align={"center"} pt={1}>
-                  <Link
-                    href="/automation"
-                    style={{ textDecoration: "none" }}
-                    target="_blank"
-                  >
-                    <Button
-                      fontSize={"md"}
-                      fontWeight={500}
-                      mt="2"
-                      color={"white"}
-                      bg={"red.700"}
-                      _hover={{
-                        bg: "red.800",
-                      }}
-                    >
-                      Learn More
-                    </Button>
-                  </Link>
-                </Stack>
-              </Stack>
-            </Box>
-          </Center>
-        </Slider>
+        <Slider {...settings} ref={(slider) => setSlider(slider)}></Slider>
       </Box>
     </Flex>
-  );
+  )
 }
