@@ -8,11 +8,11 @@ import {
   Icon,
   IconProps,
   Box,
-  Image,
   useColorModeValue,
   VStack,
   keyframes,
 } from "@chakra-ui/react";
+import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 
 const slideInAnimation = keyframes`
@@ -52,7 +52,7 @@ const fadeInAnimation = keyframes`
 export default function Header() {
   const { ref: myRef, inView: ElementIsVisible } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0.4,
   });
 
   const slideAnimation = `${slideInAnimation} 1s`;
@@ -114,8 +114,8 @@ export default function Header() {
             w={"full"}
           >
             <Blob
-              w={{ base: "0", md: "0", lg: "120%" }}
-              h={{ base: "0", md: "0", lg: "140%" }}
+              w={{ base: "0", md: "0", xl: "120%" }}
+              h={{ base: "0", md: "0", xl: "140%" }}
               position={"absolute"}
               top={"-20%"}
               left={0}
@@ -130,14 +130,7 @@ export default function Header() {
               width={"full"}
               overflow={"hidden"}
             >
-              <Image
-                alt={"Dao Image"}
-                fit={"cover"}
-                align={"center"}
-                w={"100%"}
-                h={"100%"}
-                src={"/dao.jpg"}
-              />
+              <Image alt={"Dao Image"} src={"/dao.jpg"} fill />
             </Box>
           </Flex>
         </Stack>
@@ -149,19 +142,29 @@ export default function Header() {
         ref={myRef}
         animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
         style={{ opacity: 0 }}
-        direction={{ base: "column-reverse", md: "column-reverse", lg: "row" }}
+        flexDirection={{
+          base: "column-reverse",
+          md: "column-reverse",
+          lg: "row",
+        }}
+        justifyContent="space-around"
       >
-        <Image
-          alt={"Earning"}
-          w={{ base: "90%", md: "80%", lg: "40%" }}
-          h={{ lg: "35%" }}
+        <Box
+          position={"relative"}
+          minHeight={{ base: "250", lg: "100", xl: "260" }}
+          minWidth={{ base: "300", lg: "300", xl: "380" }}
+          // minHeight="35%"
+          // minWidth="35%"
           borderRadius="10%"
-          src={"/earn3.png.png"}
           boxShadow="dark-lg"
-          backgroundSize="cover"
-          mt={{ base: "4" }}
-          alignSelf={{ base: "center" }}
-        />
+        >
+          <Image
+            alt={"Earning"}
+            src={"/earn3.png.png"}
+            fill
+            style={{ borderRadius: "10%" }}
+          />
+        </Box>
         <VStack mx={{ base: "0", lg: "20" }}>
           <Heading
             fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
@@ -186,6 +189,75 @@ export default function Header() {
           </Text>
         </VStack>
       </Flex>
+
+      {/* <Flex
+        mx={{ base: "5", md: "5", lg: "36" }}
+        mt={{ base: "5", md: "5", lg: "24" }}
+        ref={myRef}
+        animation={`${ElementIsVisible ? slideBtoTAnimation : ""} `}
+        style={{ opacity: 0 }}
+        flexDirection={{
+          base: "column-reverse",
+          md: "column-reverse",
+          lg: "row",
+        }}
+        flexShrink={"0"}
+        overflow="hidden"
+        justifyContent={"space-between"}
+      > */}
+      {/* <Image
+          alt={"Earning"}
+          w={{ base: "90%", md: "80%", lg: "40%" }}
+          h={{ lg: "35%" }}
+          borderRadius="10%"
+          src={"/earn3.png.png"}
+          boxShadow="dark-lg"
+          backgroundSize="cover"
+          mt={{ base: "4" }}
+          alignSelf={{ base: "center" }}
+        /> */}
+
+      {/* <Box
+          w={{ base: "90%", md: "80%", lg: "40%" }}
+          h={{ lg: "100%" }}
+          mt={{ base: "4" }}
+          borderRadius="10%"
+          boxShadow="dark-lg"
+          alignSelf={{ base: "center" }}
+          position="absolute"
+        >
+          <Image
+            alt={"Earning"}
+            src={"/earn3.png.png"}
+            // backgroundSize="cover"
+            // style={{ objectFit: "cover" }}
+            fill
+          />
+        </Box>
+        <VStack mx={{ base: "0", lg: "20" }}>
+          <Heading
+            fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }}
+            bgGradient="linear(to-l, red.600, red.500, red.600)"
+            bgClip="text"
+          >
+            Earn While You Learn
+          </Heading>
+          <Text
+            pt={{ base: "2", lg: "50" }}
+            textAlign="justify"
+            fontSize={{ base: "15", md: "20", lg: "15" }}
+          >
+            In this brand-new type of curriculum, students will learn how to
+            make money and boost exports in the classroom and will begin doing
+            so within six months of the program’s beginning. It resembles a
+            cross between a corporate venture and an educational project. This
+            curriculum is intended for beginners who want to learn software
+            development from the ground up. The first three quarters are shared
+            by all specialties and are dedicated to studying Object-Oriented
+            Programming and cutting-edge Full-Stack Web 2.0 development.
+          </Text>
+        </VStack> */}
+      {/* </Flex> */}
     </Box>
   );
 }

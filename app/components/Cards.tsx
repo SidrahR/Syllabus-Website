@@ -66,7 +66,7 @@ const settings = {
 
 export default function Cards() {
   const [cardData, setCardData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getData = async () => {
@@ -76,12 +76,14 @@ export default function Cards() {
         const jsonRes = await res.json();
         // console.log(jsonRes);
 
-        setTimeout(() => {
-          setCardData(jsonRes);
-          setLoading(false);
-        }, 3000);
+        // setTimeout(() => {
+        //   setCardData(jsonRes);
+        //   setLoading(false);
+        // }, 3000);
 
         // return jsonRes;
+
+        setCardData(jsonRes);
       } catch (e) {
         console.log(e as Error);
       }
@@ -172,7 +174,7 @@ export default function Cards() {
         </IconButton>
         {/* Slider */}
         <Slider {...settings} ref={(slider) => setSlider(slider)}>
-          {loading == true ? (
+          {/* {loading ? (
             <>
               <Skeleton height={20} />
               <Spinner />
@@ -181,7 +183,11 @@ export default function Cards() {
             cardData.map((data, key) => {
               return <Card props={data} key={data["id"]} />;
             })
-          )}
+          )} */}
+
+          {cardData.map((data, key) => {
+            return <Card props={data} key={data["id"]} />;
+          })}
         </Slider>
       </Box>
     </Flex>
